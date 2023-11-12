@@ -50,11 +50,11 @@ int _printf1(const char *format, ...)
 }
 
 /**
- * print_buffer2 - Prints the contents of the lim if it exist
+ * print_buffer - Prints the contents of the lim if it exist
  * @lim: Array of chars
  * @j: Index at which to add next char, represents the length.
  */
-void print_buffer2(char lim[], int *j)
+void print_buffer(char lim[], int *j)
 {
 	if (*j > 0)
 		write(1, &lim[0], *j);
