@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * check_flags1- Calculates active flags
+ * check_flags1 - Calculates active flags
  * @fstr: Formatted string in which to print the arguments
  * @i: take a parameter.
  * Return: Flags:
@@ -34,14 +34,14 @@ int check_flags1(const char *fstr, int *i)
 }
 
 /**
- * check_precision2 - Calculates the precision for printing
+ * check_precision1 - Calculates the precision for printing
  * @fstr: Formatted string in which to print the arguments
  * @i: List of arguments to be printed.
  * @fargs: list of arguments.
  *
  * Return: Precision.
  */
-int check_precision2(const char *fstr, int *i, va_list fargs)
+int check_precision1(const char *fstr, int *i, va_list fargs)
 {
 	int curr_i = *i + 1;
 	int precision = -1;
@@ -76,13 +76,13 @@ int check_precision2(const char *fstr, int *i, va_list fargs)
 }
 
 /**
- * check_size -Calculates the size to cast the argument
+ * check_size1 -Calculates the size to cast the argument
  * @fstr: Formatted string in which to print the arguments
  * @i: List of arguments to be printed.
  *
  * Return: Precision.
  */
-int check_size(const char *fstr, int *i)
+int check_size1(const char *fstr, int *i)
 {
 	int curr_i = *i + 1;
 	int size = 0;
@@ -101,14 +101,14 @@ int check_size(const char *fstr, int *i)
 }
 
 /**
- * check_width3 - Calculates the width for printing
+ * check_width1 - Calculates the width for printing
  * @fstr: Formatted string in which to print the arguments.
  * @i: List of arguments to be printed.
  * @fargs: list of arguments.
  *
  * Return: width.
  */
-int check_width3(const char *fstr, int *i, va_list fargs)
+int check_width1(const char *fstr, int *i, va_list fargs)
 {
 	int curr_i;
 	int width = 0;

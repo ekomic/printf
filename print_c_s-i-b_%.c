@@ -3,7 +3,7 @@
 /************************* PRINT CHAR *************************/
 
 /**
- * print_c1 - Prints a char
+ * print_c - Prints a char
  * @args: List a of arguments
  * @lim: lim array to handle print
  * @flags:  Calculates active flags
@@ -12,16 +12,16 @@
  * @size: Size specifier
  * Return: Number of chars printed
  */
-int print_c1(va_list args, char lim[],
+int print_c(va_list args, char lim[],
 	int flags, int width, int precision, int size)
 {
 	char c = va_arg(args, int);
 
-	return (write_c2(c, lim, flags, width, precision, size));
+	return (write_c(c, lim, flags, width, precision, size));
 }
 /************************* PRINT A STRING *************************/
 /**
- * print_s3 - Prints a string
+ * print_s - Prints a string
  * @args: List a of arguments
  * @lim: lim array to handle print
  * @flags:  Calculates active flags
@@ -30,7 +30,7 @@ int print_c1(va_list args, char lim[],
  * @size: Size specifier
  * Return: Number of chars printed
  */
-int print_s3(va_list args, char lim[],
+int print_s(va_list args, char lim[],
 	int flags, int width, int precision, int size)
 {
 	int length = 0, i;
@@ -72,7 +72,7 @@ int print_s3(va_list args, char lim[],
 }
 /************************* PRINT PERCENT SIGN *************************/
 /**
- * print_percent3 - Prints a percent sign
+ * print_percent - Prints a percent sign
  * @args: Lista of arguments
  * @lim: lim array to handle print
  * @flags:  Calculates active flags
@@ -81,7 +81,7 @@ int print_s3(va_list args, char lim[],
  * @size: Size specifier
  * Return: Number of chars printed
  */
-int print_percent3(va_list args, char lim[],
+int print_percent(va_list args, char lim[],
 	int flags, int width, int precision, int size)
 {
 	NO(args);
@@ -95,7 +95,7 @@ int print_percent3(va_list args, char lim[],
 
 /************************* PRINT INT *************************/
 /**
- * print_i_d1 - Print int
+ * print_i_d - Print int
  * @args: Lista of arguments
  * @lim: lim array to handle print
  * @flags:  Calculates active flags
@@ -104,7 +104,7 @@ int print_percent3(va_list args, char lim[],
  * @size: Size specifier
  * Return: Number of chars printed
  */
-int print_i_d1(va_list args, char lim[],
+int print_i_d(va_list args, char lim[],
 	int flags, int width, int precision, int size)
 {
 	int i = 1024 - 2;
@@ -112,7 +112,7 @@ int print_i_d1(va_list args, char lim[],
 	long int n = va_arg(args, long int);
 	unsigned long int num;
 
-	n = conv_size_numb2(n, size);
+	n = conv_size_numb(n, size);
 
 	if (n == 0)
 		lim[i--] = '0';
@@ -134,12 +134,12 @@ int print_i_d1(va_list args, char lim[],
 
 	i++;
 
-	return (write_fnumb1(negative, i, lim, flags, width, precision, size));
+	return (write_fnumb(negative, i, lim, flags, width, precision, size));
 }
 
 /************************* PRINT BINARY *************************/
 /**
- * print_b1 - Prints an unsigned number
+ * print_b2 - Prints an unsigned number
  * @args: Lista of arguments
  * @lim: lim array to handle print
  * @flags:  Calculates active flags
@@ -148,7 +148,7 @@ int print_i_d1(va_list args, char lim[],
  * @size: Size specifier
  * Return: Numbers of char printed.
  */
-int print_b1(va_list args, char lim[],
+int print_b2(va_list args, char lim[],
 	int flags, int width, int precision, int size)
 {
 	unsigned int n, m, i, sum;

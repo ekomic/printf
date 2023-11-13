@@ -1,6 +1,6 @@
 #include "main.h"
 /**
- * flag_handler2 - Prints an argument based on its type
+ * flag_handler12 - Prints an argument based on its type
  * @typ: Formatted string in which to print the arguments.
  * @fargs: List of arguments to be printed.
  * @ind: ind.
@@ -12,16 +12,16 @@
  *
  * Return: 1 or 2;
  */
-int flag_handler2(const char *typ, int *ind, va_list fargs, char lim[],
+int flag_handler12(const char *typ, int *ind, va_list fargs, char lim[],
 	int flags, int width, int precision, int size)
 {
 	int i, unknow_len = 0, printed_chars = -1;
 	typ_t typ_types[] = {
-		{'c', print_c1}, {'s', print_s3}, {'%', print_percent3},
-		{'i', print_i_d1}, {'d', print_i_d1}, {'b', print_b1},
-		{'u', print_u}, {'o', print_o1}, {'x', print_x1},
-		{'X', print_X1}, {'p', print_p1}, {'S', print_S2},
-		{'r', print_r1}, {'R', print_R1}, {'\0', NULL}
+		{'c', print_c}, {'s', print_s}, {'%', print_percent},
+		{'i', print_i_d}, {'d', print_i_d}, {'b', print_b2},
+		{'u', print_u2}, {'o', print_o}, {'x', print_x},
+		{'X', print_X}, {'p', print_p}, {'S', print_S},
+		{'r', print_r}, {'R', print_R}, {'\0', NULL}
 	};
 	for (i = 0; typ_types[i].typ != '\0'; i++)
 		if (typ[*ind] == typ_types[i].typ)

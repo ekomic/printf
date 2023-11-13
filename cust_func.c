@@ -1,12 +1,12 @@
 #include "main.h"
 
 /**
- * can_print4 - Evaluates if a char is printable
+ * can_print3 - Evaluates if a char is printable
  * @c: Char to be evaluated.
  *
  * Return: 1 if c is printable, 0 otherwise
  */
-int can_print4(char c)
+int can_print3(char c)
 {
 	if (c >= 32 && c < 127)
 		return (1);
@@ -15,14 +15,14 @@ int can_print4(char c)
 }
 
 /**
- * add_hexa_code2 - Append ascci in hexadecimal code to lim
+ * add_hexa_code - Append ascci in hexadecimal code to lim
  * @lim: Array of chars.
  * @i: Index at which to start appending.
  * @ascii_code: ASSCI CODE.
  *
  * Return: Always 3
  */
-int add_hexa_code2(char ascii_code, char lim[], int i)
+int add_hexa_code(char ascii_code, char lim[], int i)
 {
 	char map_to[] = "0123456789ABCDEF";
 	/* The hexa format code is always 2 digits long */
@@ -53,13 +53,13 @@ int is_digit(char c)
 }
 
 /**
- * conv_size_numb2 - Casts a number to the specified size
+ * conv_size_numb - Casts a number to the specified size
  * @num: Number to be casted.
  * @size: Number indicating the type to be casted.
  *
  * Return: Casted value of num
  */
-long int conv_size_numb2(long int num, int size)
+long int conv_size_numb(long int num, int size)
 {
 	if (size == C_LONG)
 		return (num);
@@ -70,13 +70,13 @@ long int conv_size_numb2(long int num, int size)
 }
 
 /**
- * conv_size_un5 - Casts a number to the specified size
+ * conv_size_un - Casts a number to the specified size
  * @num: Number to be casted
  * @size: Number indicating the type to be casted
  *
  * Return: Casted value of num
  */
-long int conv_size_un5(unsigned long int num, int size)
+long int conv_size_un(unsigned long int num, int size)
 {
 	if (size == C_LONG)
 		return (num);

@@ -2,7 +2,7 @@
 
 /****************** PRINT POINTER ******************/
 /**
- * print_p1 - Prints the value of a pointer variable
+ * print_p - Prints the value of a pointer variable
  * @args: List a of arguments
  * @lim: lim array to handle print
  * @flags:  Calculates active flags
@@ -11,7 +11,7 @@
  * @size: Size specifier
  * Return: Number of chars printed.
  */
-int print_p1(va_list args, char lim[],
+int print_p(va_list args, char lim[],
 	int flags, int width, int precision, int size)
 {
 	char extra_c = 0, padd = ' ';
@@ -48,13 +48,13 @@ int print_p1(va_list args, char lim[],
 	ind++;
 
 	/*return (write(1, &lim[i], 1024 - i - 1));*/
-	return (write_p1(lim, ind, length,
+	return (write_p2(lim, ind, length,
 		width, flags, padd, extra_c, padd_start));
 }
 
 /************************* PRINT NON PRINTABLE *************************/
 /**
- * print_S2 - Prints ascii codes in hexa of non printable chars
+ * print_S - Prints ascii codes in hexa of non printable chars
  * @args: Lista of arguments
  * @lim: lim array to handle print
  * @flags:  Calculates active flags
@@ -63,7 +63,7 @@ int print_p1(va_list args, char lim[],
  * @size: Size specifier
  * Return: Number of chars printed
  */
-int print_S2(va_list args, char lim[],
+int print_S(va_list args, char lim[],
 	int flags, int width, int precision, int size)
 {
 	int i = 0, offset = 0;
@@ -79,10 +79,10 @@ int print_S2(va_list args, char lim[],
 
 	while (str[i] != '\0')
 	{
-		if (can_print4(str[i]))
+		if (can_print3(str[i]))
 			lim[i + offset] = str[i];
 		else
-			offset += add_hexa_code2(str[i], lim, i + offset);
+			offset += add_hexa_code(str[i], lim, i + offset);
 
 		i++;
 	}
@@ -94,7 +94,7 @@ int print_S2(va_list args, char lim[],
 
 /************************* PRINT REVERSE *************************/
 /**
- * print_r1 - Prints reverse string.
+ * print_r - Prints reverse string.
  * @args: Lista of arguments
  * @lim: lim array to handle print
  * @flags:  Calculates active flags
@@ -104,7 +104,7 @@ int print_S2(va_list args, char lim[],
  * Return: Numbers of chars printed
  */
 
-int print_r1(va_list args, char lim[],
+int print_r(va_list args, char lim[],
 	int flags, int width, int precision, int size)
 {
 	char *str;
@@ -137,7 +137,7 @@ int print_r1(va_list args, char lim[],
 }
 /************************* PRINT A STRING IN ROT13 *************************/
 /**
- * print_R1 - Print a string in rot13.
+ * print_R - Print a string in rot13.
  * @args: Lista of arguments
  * @lim: lim array to handle print
  * @flags:  Calculates active flags
@@ -146,7 +146,7 @@ int print_r1(va_list args, char lim[],
  * @size: Size specifier
  * Return: Numbers of chars printed
  */
-int print_R1(va_list args, char lim[],
+int print_R(va_list args, char lim[],
 	int flags, int width, int precision, int size)
 {
 	char x;
