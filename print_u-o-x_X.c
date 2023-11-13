@@ -17,7 +17,7 @@ int print_u(va_list args, char lim[],
 	int i = 1024 - 2;
 	unsigned long int num = va_arg(args, unsigned long int);
 
-	num = conv_size_un(num, size);
+	num = conv_size_un5(num, size);
 
 	if (num == 0)
 		lim[i--] = '0';
@@ -32,7 +32,7 @@ int print_u(va_list args, char lim[],
 
 	i++;
 
-	return (write_u(0, i, lim, flags, width, precision, size));
+	return (write_u1(0, i, lim, flags, width, precision, size));
 }
 
 /************* PRINT UNSIGNED NUMBER IN OCTAL  ****************/
@@ -56,7 +56,7 @@ int print_o1(va_list args, char lim[],
 
 	NO(width);
 
-	num = conv_size_un(num, size);
+	num = conv_size_un5(num, size);
 
 	if (num == 0)
 		lim[i--] = '0';
@@ -74,7 +74,7 @@ int print_o1(va_list args, char lim[],
 
 	i++;
 
-	return (write_u(0, i, lim, flags, width, precision, size));
+	return (write_u1(0, i, lim, flags, width, precision, size));
 }
 
 /************** PRINT UNSIGNED NUMBER IN HEXADECIMAL **************/
@@ -136,7 +136,7 @@ int print_fhex1(va_list args, char map_to[], char lim[],
 
 	NO(width);
 
-	num = conv_size_un(num, size);
+	num = conv_size_un5(num, size);
 
 	if (num == 0)
 		lim[i--] = '0';
@@ -157,5 +157,5 @@ int print_fhex1(va_list args, char map_to[], char lim[],
 
 	i++;
 
-	return (write_u(0, i, lim, flags, width, precision, size));
+	return (write_u1(0, i, lim, flags, width, precision, size));
 }

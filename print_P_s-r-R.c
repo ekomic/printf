@@ -48,7 +48,7 @@ int print_p1(va_list args, char lim[],
 	ind++;
 
 	/*return (write(1, &lim[i], 1024 - i - 1));*/
-	return (write_p(lim, ind, length,
+	return (write_p1(lim, ind, length,
 		width, flags, padd, extra_c, padd_start));
 }
 
@@ -79,10 +79,10 @@ int print_S2(va_list args, char lim[],
 
 	while (str[i] != '\0')
 	{
-		if (can_print(str[i]))
+		if (can_print4(str[i]))
 			lim[i + offset] = str[i];
 		else
-			offset += add_hexa_code(str[i], lim, i + offset);
+			offset += add_hexa_code2(str[i], lim, i + offset);
 
 		i++;
 	}

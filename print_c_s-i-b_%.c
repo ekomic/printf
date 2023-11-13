@@ -17,7 +17,7 @@ int print_c1(va_list args, char lim[],
 {
 	char c = va_arg(args, int);
 
-	return (write_c(c, lim, flags, width, precision, size));
+	return (write_c2(c, lim, flags, width, precision, size));
 }
 /************************* PRINT A STRING *************************/
 /**
@@ -112,7 +112,7 @@ int print_i_d1(va_list args, char lim[],
 	long int n = va_arg(args, long int);
 	unsigned long int num;
 
-	n = conv_size_numb(n, size);
+	n = conv_size_numb2(n, size);
 
 	if (n == 0)
 		lim[i--] = '0';
@@ -134,7 +134,7 @@ int print_i_d1(va_list args, char lim[],
 
 	i++;
 
-	return (write_fnumb(negative, i, lim, flags, width, precision, size));
+	return (write_fnumb1(negative, i, lim, flags, width, precision, size));
 }
 
 /************************* PRINT BINARY *************************/

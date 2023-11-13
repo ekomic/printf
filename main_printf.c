@@ -31,12 +31,12 @@ int _printf1(const char *format, ...)
 		else
 		{
 			print_buffer(lim, &j);
-			flags = check_flags(format, &i);
-			width = check_width(format, &i, fargs);
-			precision = check_precision(format, &i, fargs);
+			flags = check_flags1(format, &i);
+			width = check_width3(format, &i, fargs);
+			precision = check_precision2(format, &i, fargs);
 			size = check_size(format, &i);
 			++i;
-			printed = flag_handler1(format, &i, fargs, lim,
+			printed = flag_handler2(format, &i, fargs, lim,
 				flags, width, precision, size);
 			if (printed == -1)
 				return (-1);
